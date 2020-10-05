@@ -4,7 +4,9 @@ import {AgendaComponent} from './agenda/agenda.component';
 
 
 const routes: Routes = [
-  {path: 'agenda', component: AgendaComponent}
+  {path: '', redirectTo: 'agenda', pathMatch: 'full'},
+  {path: 'agenda', component: AgendaComponent},
+  {path: '**', component: AgendaComponent}
 ];
 
 @NgModule({

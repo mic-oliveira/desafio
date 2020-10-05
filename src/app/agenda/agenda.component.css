@@ -1,3 +1,9 @@
 table {
   width: 100%;
 }
+
+@media (max-width: 600px) {
+  button {
+    margin-left: 0 !important;
+  }
+}

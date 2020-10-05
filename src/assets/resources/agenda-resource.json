@@ -2,37 +2,37 @@
   {
     "id": 1,
     "titulo": "Mercado",
-    "prioridade": 1,
+    "prioridade": 2,
     "lembrete": "Compras semanais"
   },
   {
     "id": 2,
     "titulo": "Academia",
-    "prioridade": 2,
+    "prioridade": 1,
     "lembrete": "Treino matinal"
   },
   {
     "id": 3,
     "titulo": "Consulta com dentista",
-    "prioridade": 1,
+    "prioridade": 3,
     "lembrete": "Consulta para extração de ciso"
   },
   {
     "id": 4,
-    "titulo": "Consulta com dentista",
+    "titulo": "Reunião",
     "prioridade": 3,
-    "lembrete": "Consulta para extração de ciso"
+    "lembrete": "Reunião semanal"
   },
   {
     "id": 5,
-    "titulo": "Consulta com dentista",
-    "prioridade": 1,
-    "lembrete": "Consulta para extração de ciso"
+    "titulo": "Encomendar louça de vidro magnético",
+    "prioridade": 2,
+    "lembrete": "Orçar louça de vidro para o escritório."
   },
   {
     "id": 6,
-    "titulo": "Consulta com dentista",
-    "prioridade": 3,
-    "lembrete": "Consulta para extração de ciso"
+    "titulo": "Corrida",
+    "prioridade": 1,
+    "lembrete": "Correr 30 minutos na esteira"
   }
 ]

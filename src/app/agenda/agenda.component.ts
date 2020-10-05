@@ -74,6 +74,12 @@ export class AgendaComponent implements OnInit, AfterContentInit {
     });
   }
 
+  deletar(agenda: Agenda)
+  {
+    this.service.remove(agenda);
+    this.agendaSubject.next();
+  }
+
   mudarPagina(event) {
     this.page = event.pageIndex;
     this.pageSize = event.pageSize;

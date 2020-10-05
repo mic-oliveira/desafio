@@ -45,6 +45,8 @@
       <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let element">
         <button mat-raised-button color="primary" (click)="editar(element)" type="button">EDITAR</button>
+        <button mat-raised-button style="margin-left: 15px;" color="accent" (click)="deletar(element)"
+                type="button">REMOVER</button>
       </td>
     </ng-container>
 

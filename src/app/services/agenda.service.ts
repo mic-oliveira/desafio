@@ -38,6 +38,13 @@ export class AgendaService {
     localStorage.setItem('agendas', JSON.stringify(agendas));
   }
 
+  remove(agenda: Agenda)
+  {
+    const agendas = JSON.parse(localStorage.getItem('agendas')) as Agenda[];
+    const index = agendas.findIndex(x => x.id === agenda.id);
+    localStorage.setItem('agendas', JSON.stringify(agendas.filter(ag => ag.id !== agenda.id)));
+  }
+
   update(agenda: Agenda)
   {
     const agendas = JSON.parse(localStorage.getItem('agendas')) as Agenda[];
