@@ -13,6 +13,11 @@ export class Agenda extends Model{
     'lembrete'
   ];
 
+  constructor() {
+    super();
+    this.prioridade = 1;
+  }
+
   get id(): number {
     return this._id;
   }
