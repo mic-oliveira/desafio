@@ -1,0 +1,60 @@
+<div class="mat-elevation-z8">
+  <div class="row">
+    <mat-form-field style="width: 85%; padding-left:10px; padding-right: 10px;" appearance="outline">
+      <mat-label>Lembrete</mat-label>
+      <input matInput [(ngModel)]="searchString" placeholder="Digite o lembrete">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="search()" type="button">
+      PESQUISAR
+    </button>
+    <button mat-raised-button style="margin-left: 15px" (click)="adicionar()" color="green" type="button">
+      ADICIONAR
+    </button>
+  </div>
+  <table mat-table [dataSource]="agenda">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef> TITULO </th>
+      <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="prioridade" style="padding-left: 15px;">
+      <th mat-header-cell *matHeaderCellDef> PRIORIDADE </th>
+      <td mat-cell *matCellDef="let element" [ngSwitch]="element.prioridade">
+        <p *ngSwitchCase="1" >BAIXA</p>
+        <p *ngSwitchCase="2" >MÉDIA</p>
+        <p *ngSwitchCase="3" >ALTA</p>
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="lembrete">
+      <th mat-header-cell *matHeaderCellDef> LEMBRETE </th>
+      <td mat-cell *matCellDef="let element"> {{element.lembrete}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acao">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="editar(element)" type="button">EDITAR</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5,10,15]"
+                 [length]="length"
+                 (page)="mudarPagina($event)"
+                 showFirstLastButtons></mat-paginator>
+</div>
+

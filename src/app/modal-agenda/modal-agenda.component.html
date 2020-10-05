@@ -1,0 +1,34 @@
+<form name="agenda" #form="ngForm" novalidate>
+  <mat-grid-list cols="4">
+    <h1 mat-dialog-title>Adicionar evento</h1>
+    <mat-grid-tile colspan="4" mat-dialog-content>
+      <mat-form-field style="width: 90%">
+        <mat-label>Prioridade</mat-label>
+        <mat-select [disabled]="agenda.id !==undefined"
+                    (selectionChange)="setPriority($event.value)" [value]="selected?selected:'1'">
+          <mat-option value="1">BAIXA</mat-option>
+          <mat-option value="2">MÉDIA</mat-option>
+          <mat-option value="3">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" mat-dialog-content>
+      <mat-form-field style="width: 90%">
+        <mat-label>Título</mat-label>
+        <input matInput id="titulo" name="titulo" type="text" required [(ngModel)]="agenda.titulo"
+              #titulo="ngModel">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" mat-dialog-content>
+      <mat-form-field style="width: 90%">
+        <mat-label>Lembrete {{form.invalid}}</mat-label>
+        <textarea matInput id="lembrete" name="lembrete" required [(ngModel)]="agenda.lembrete"
+                  #lembrete="ngModel"></textarea>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div mat-dialog-actions>
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="form.invalid" [mat-dialog-close]="agenda" cdkFocusInitial>Adicionar</button>
+  </div>
+</form>
